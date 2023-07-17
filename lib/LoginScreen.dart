@@ -1,120 +1,133 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenStates createState() => _LoginScreenStates();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenStates extends State<LoginScreen> {
-
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-          ),
-          child: Column(
-            children: [
-              Image.asset(
-                "assets/login.png",
-                height: 320,
-                width: 350,
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 25,
-                  bottom: 20,
+        child: Center(
+          // Letakkan tampilan di tengah layar
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment:
+                  MainAxisAlignment.center, // Untuk menengahkan vertikal
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Text(
+                    "Selamat Datang",
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Alamat Email",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
 
-                ),
-                child: Text("Selamat Datang", style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                      
-                ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFF1F1F1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 15,
-                  ),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Email',
-                      
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF1F1F1),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: Colors.black, // Warna garis tepi hitam
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFF1F1F1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 15,
-                  ),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Password',
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 7,
+                      horizontal: 13,
                     ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: InkWell(
-                  onTap: () {
-                  },
-                  child: Text("Forgot Password", style: TextStyle(color: Color(0xFFDA3340),
-                  ),
-                  ),
-                ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: MaterialButton(
-                      color:  Color.fromARGB(0, 12, 17, 63),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                        hintText: 'Masukkan Alamat Email',
                       ),
-                      onPressed: () {} ,
-                      child: Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: const Text(
-                          "LOGIN", 
-                          style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Kata Sandi",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF1F1F1),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: Colors.black, // Warna garis tepi hitam
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 7,
+                      horizontal: 13,
+                    ),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                        hintText: 'Minimal 8 Karakter',
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                    height: 40), // Jarak antara password dengan tombol login
+                Row(
+                  children: [
+                    Expanded(
+                      child: MaterialButton(
+                        color:
+                            Color.fromARGB(255, 2, 31, 55), // Ubah warna tombol
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: const Text(
+                            "MASUK",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
                       ),
-                    )
-                  ),
-                ],
-              ),
-            ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
