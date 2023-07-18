@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:si_gud/branda_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -111,7 +112,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Home(),
+                            ),
+                          );
+                        },
                         child: Padding(
                           padding: const EdgeInsets.all(18.0),
                           child: const Text(
