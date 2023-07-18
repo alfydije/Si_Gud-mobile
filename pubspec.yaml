@@ -71,6 +71,7 @@ flutter:
     - assets/sigud.png
     - assets/login.png
     - assets/onboarding.png
+    - assets/home.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

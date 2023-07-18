@@ -126,9 +126,44 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      body: Center(
-        child: Text("Main Content"),
+    body: Container(
+  width: 380,
+  height: 200,
+  decoration: BoxDecoration(
+    color: Color.fromARGB(255, 2, 31, 55),
+    borderRadius: BorderRadius.circular(10),
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: [
+      Text(
+        'Inventory',
+        style: TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+        textAlign: TextAlign.start,
       ),
+      Text(
+        'Gudang',
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+        textAlign: TextAlign.start,
+      ),
+      Transform.scale(
+        scale: 0.8,
+        child: Image.asset('assets/home.png'),
+      ),
+    ],
+  ),
+  
+),
+
+      
     );
   }
 }
