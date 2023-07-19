@@ -74,6 +74,15 @@ flutter:
     - assets/onboarding.png
     - assets/Hardisk.png
     - assets/Led.png
+    - assets/home.png
+    - assets/inventory.png
+    - assets/material.png
+    - assets/outstock.png
+    - assets/stock.png
+
+
+
+
 
   #   - images/a_dot_ham.jpeg
 
