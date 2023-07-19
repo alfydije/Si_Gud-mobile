@@ -23,7 +23,7 @@ class OnboardingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Bersiaplah untuk Mengalami perubahan',
+                    'Bersiaplah untuk mengalami perubahan',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,

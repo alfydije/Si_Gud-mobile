@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Splash Screen Demo',
+      title: 'Splash Screen',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

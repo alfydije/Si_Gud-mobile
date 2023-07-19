@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:si_gud/barang_keluar/barangkeluar.dart';
 import 'package:si_gud/barang_masuk/barangmasuk.dart';
 import 'package:si_gud/data_barang/databarang.dart';
+import 'package:si_gud/stok_barang/stokbarang.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -106,7 +107,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DataBarangScreen()),
+                            builder: (context) => StokBarangScreen()),
                       );
                     },
                   ),
