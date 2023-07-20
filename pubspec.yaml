@@ -79,6 +79,8 @@ flutter:
     - assets/material.png
     - assets/outstock.png
     - assets/stock.png
+    - assets/CPU.png
+    - assets/VGA.png
 
 
 
