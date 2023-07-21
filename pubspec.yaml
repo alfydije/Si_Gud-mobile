@@ -79,8 +79,13 @@ flutter:
     - assets/material.png
     - assets/outstock.png
     - assets/stock.png
+<<<<<<< HEAD
     - assets/profil.png
 
+=======
+    - assets/CPU.png
+    - assets/VGA.png
+>>>>>>> 71665f11e166da9dcce5cfac8b979f7d47e74951
 
 
 
