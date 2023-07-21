@@ -102,7 +102,7 @@ class StokBarangScreen extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "assets/Hardisk.png",
+                      "assets/Led.png",
                       height: 136,
                       width: 96,
                     ),
@@ -152,9 +152,9 @@ class StokBarangScreen extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "assets/Hardisk.png",
-                      height: 136,
-                      width: 96,
+                      "assets/Led.png",
+                      height: 120,
+                      width: 80,
                     ),
                   ),
                   Text(

@@ -72,7 +72,6 @@ flutter:
     - assets/sigud.png
     - assets/login.png
     - assets/onboarding.png
-<<<<<<< HEAD
     - assets/Hardisk.png
     - assets/Led.png
     - assets/home.png
@@ -80,14 +79,13 @@ flutter:
     - assets/material.png
     - assets/outstock.png
     - assets/stock.png
+    - assets/profil.png
 
 
 
 
 
-=======
-    - assets/home.png
->>>>>>> e0508393b093ca5539be7fc6fd44d9fe203a039c
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

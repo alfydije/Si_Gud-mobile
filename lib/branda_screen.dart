@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:si_gud/barang_keluar/barangkeluar.dart';
 import 'package:si_gud/barang_masuk/barangmasuk.dart';
 import 'package:si_gud/data_barang/databarang.dart';
+import 'package:si_gud/profil/profil.dart';
 import 'package:si_gud/stok_barang/stokbarang.dart';
 
 class Home extends StatefulWidget {
@@ -56,7 +57,11 @@ class _HomeState extends State<Home> {
                 leading: Icon(Icons.person, color: Colors.white),
                 title: Text("Profil", style: TextStyle(color: Colors.white)),
                 onTap: () {
-                  // Do something when the Profil item is tapped
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Profil()),
+                  );
                 },
               ),
               ExpansionTile(
@@ -113,7 +118,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              SizedBox(height: 250),
+              SizedBox(height: 200),
               Divider(),
               ListTile(
                 leading: Icon(Icons.logout, color: Colors.white),
@@ -176,8 +181,8 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.only(right: 20),
                       child: Image.asset(
                         'assets/home.png',
-                        width: 170,
-                        height: 170,
+                        width: 200,
+                        height: 200,
                       ),
                     ),
                   ],
@@ -185,7 +190,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 150),
+              padding: EdgeInsets.only(top: 100),
               child: Wrap(
                 spacing: 10,
                 runSpacing: 10,
@@ -193,7 +198,7 @@ class _HomeState extends State<Home> {
                   // Your Wrap children
                   Container(
                     width: 180,
-                    height: 130,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
@@ -211,8 +216,8 @@ class _HomeState extends State<Home> {
                       children: [
                         Image.asset(
                           'assets/inventory.png',
-                          width: 80,
-                          height: 80,
+                          width: 100,
+                          height: 100,
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -228,7 +233,7 @@ class _HomeState extends State<Home> {
                   ),
                   Container(
                     width: 180,
-                    height: 130,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
@@ -246,8 +251,8 @@ class _HomeState extends State<Home> {
                       children: [
                         Image.asset(
                           'assets/stock.png',
-                          width: 80,
-                          height: 80,
+                          width: 100,
+                          height: 100,
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -263,7 +268,7 @@ class _HomeState extends State<Home> {
                   ),
                   Container(
                     width: 180,
-                    height: 130,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
@@ -281,8 +286,8 @@ class _HomeState extends State<Home> {
                       children: [
                         Image.asset(
                           'assets/material.png',
-                          width: 80,
-                          height: 80,
+                          width: 100,
+                          height: 100,
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -298,7 +303,7 @@ class _HomeState extends State<Home> {
                   ),
                   Container(
                     width: 180,
-                    height: 130,
+                    height: 180,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
@@ -316,8 +321,8 @@ class _HomeState extends State<Home> {
                       children: [
                         Image.asset(
                           'assets/outstock.png',
-                          width: 80,
-                          height: 80,
+                          width: 100,
+                          height: 100,
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -332,9 +337,13 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   // Add more boxes as needed
+                  
                 ],
+                
               ),
+              
             )
+            
           ],
         ),
       ),
