@@ -80,6 +80,14 @@ flutter:
     - assets/outstock.png
     - assets/stock.png
     - assets/profil.png
+    - assets/CPU.png
+    - assets/VGA.png
+    - assets/datbar1.png
+    - assets/manufac.png
+    - assets/shipment.png
+    - assets/storage.png
+    - assets/warehouse.png
+    
 
 
 

@@ -23,7 +23,7 @@ class BarangKeluarScreen extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ), // Text style for the app bar title
       ),
-     body: SingleChildScrollView(
+    body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Column(
           children: [

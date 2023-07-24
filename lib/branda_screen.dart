@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:si_gud/barang_keluar/barangkeluar.dart';
-import 'package:si_gud/barang_masuk/barangmasuk.dart';
-import 'package:si_gud/data_barang/databarang.dart';
+import 'package:si_gud/barang_keluar/kategori_bkeluar.dart';
+import 'package:si_gud/barang_masuk/kategori_bmasuk.dart';
+import 'package:si_gud/data_barang/kategori_bdatbar.dart';
 import 'package:si_gud/profil/profil.dart';
-import 'package:si_gud/stok_barang/stokbarang.dart';
+import 'package:si_gud/stok_barang/kategori_stokbar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BarangMasukScreen()),
+                            builder: (context) => KategoriBarangMasukScreen()),
                       );
                     },
                   ),
@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BarangKeluarScreen()),
+                            builder: (context) => KategoriBarangKeluarScreen()),
                       );
                     },
                   ),
@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DataBarangScreen()),
+                            builder: (context) => KategoriDataBarangScreen()),
                       );
                     },
                   ),
@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => StokBarangScreen()),
+                            builder: (context) => KategoriStockBarangScreen()),
                       );
                     },
                   ),
