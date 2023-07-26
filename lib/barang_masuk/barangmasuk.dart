@@ -13,7 +13,7 @@ class BarangMasukScreen extends StatelessWidget {
           },
         ),
         title: Text(
-          'Stok Barang',
+          'Barang Masuk',
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,

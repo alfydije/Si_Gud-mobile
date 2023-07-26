@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:si_gud/barang_keluar/barangkeluar.dart';
+import 'package:si_gud/branda_screen.dart';
 
-class KategoriBarangKeluarScreen extends StatelessWidget {
+class LihatGudang extends StatefulWidget {
+  const LihatGudang({Key? key}) : super(key: key);
+
+  @override
+  State<LihatGudang> createState() => _LihatGudangState();
+}
+
+class _LihatGudangState extends State<LihatGudang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,47 +17,86 @@ class KategoriBarangKeluarScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            // Handle back button pressed
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => Home()),
+            );
           },
         ),
-        title: Text(
-          'Barang Keluar',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 2, 31, 55),
         elevation: 0,
         iconTheme: IconThemeData(
           color: Color.fromARGB(255, 168, 180, 226),
         ),
         automaticallyImplyLeading: false,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 10),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Container(
-                  width: 350,
-                  height: 250,
-                  child: Image.asset(
-                    'assets/datbar1.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 150,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 2, 31, 55),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(40),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Lihat',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Gudang',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Image.asset(
+                      'assets/box.png',
+                      width: 300,
+                      height: 300,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 50),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Wrap(
+                alignment:
+                    WrapAlignment.center, // Center the items horizontally
                 spacing: 30,
                 runSpacing: 40,
                 children: [
@@ -201,9 +248,8 @@ class KategoriBarangKeluarScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
-  }
-}
+  }}
