@@ -1,311 +1,135 @@
 import 'package:flutter/material.dart';
+import 'package:si_gud/barang_masuk/tambahbarangmasuk.dart';
 
 class BarangMasukScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Handle back button pressed
-            Navigator.pop(context);
-          },
-        ),
         title: Text(
-          'Stok Barang',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          'Barang Masuk',
+          style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(
-          color: Color.fromARGB(255, 168, 180, 226),
+        iconTheme: IconThemeData(color: Color.fromARGB(255, 168, 180, 226)),
+        toolbarTextStyle: TextStyle(
+          color: Colors.black,
         ),
-        automaticallyImplyLeading: false,
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+            buildItem(
+              'CENTRAL PROCESSING UNIT',
+              'Jumlah Stok',
+              '05',
+              'assets/CPU.png',
+            ),
+            buildItem(
+              'HARDISK',
+              'Jumlah Stok',
+              '0',
+              'assets/Hardisk.png',
+            ),
+            buildItem(
+              'LED',
+              'Jumlah Stok',
+              '05',
+              'assets/Led.png',
+            ),
+            buildItem(
+              'VGA CARD',
+              'Jumlah Stok',
+              '0',
+              'assets/VGA.png',
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Navigate to the TambahBarangScreen when the plus sign is clicked
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TambahBarangScreen(
+                fotoBarang: '',
+                kodeBarang: '',
+                stokBarang: '',
+                namaBarang: '',
+              ),
+            ),
+          );
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Color.fromARGB(255, 2, 31, 55),
+      ),
+    );
+  }
+
+  Widget buildItem(
+      String title, String subTitle, String stock, String imagePath) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 3,
+              blurRadius: 10,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            InkWell(
+              onTap: () {},
               child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          "assets/CPU.png",
-                          height: 100,
-                          width: 80,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "CENTRAL PROCESSING UNIT",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            "05",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
-                      ),
-                    ),
-                  ],
+                alignment: Alignment.center,
+                child: Image.asset(
+                  imagePath,
+                  height: 100,
+                  width: 80,
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+            Expanded( // Wrap the Row with Expanded to avoid overflow
               child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          "assets/Hardisk.png",
-                          height: 100,
-                          width: 80,
-                        ),
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "HARDISK",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
+                    Text(
+                      subTitle,
+                      style: TextStyle(
+                        fontSize: 14,
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          "assets/Led.png",
-                          height: 100,
-                          width: 80,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "LED",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            "05",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          "assets/VGA.png",
-                          height: 100,
-                          width: 80,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "VGA CARD",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
+                    Text(
+                      stock,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.blue,
                       ),
                     ),
                   ],
@@ -318,3 +142,5 @@ class BarangMasukScreen extends StatelessWidget {
     );
   }
 }
+
+// The TambahBarangScreen class remains unchanged as before
