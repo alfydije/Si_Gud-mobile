@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:si_gud/barang_keluar/barangkeluar.dart';
 import 'package:si_gud/branda_screen.dart';
+import 'package:si_gud/laporan/laporan_rekap.dart';
 
 class LihatGudang extends StatefulWidget {
   const LihatGudang({Key? key}) : super(key: key);
@@ -105,7 +105,7 @@ class _LihatGudangState extends State<LihatGudang> {
                       // Navigate to another page when Gudang A is tapped
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => BarangKeluarScreen()),
+                        MaterialPageRoute(builder: (_) => LaporanRekapanScreen()),
                       );
                     },
                     child: Container(
@@ -141,7 +141,7 @@ class _LihatGudangState extends State<LihatGudang> {
                       // Navigate to another page when Gudang B is tapped
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => BarangKeluarScreen()),
+                        MaterialPageRoute(builder: (_) => LaporanRekapanScreen()),
                       );
                     },
                     child: Container(
@@ -177,7 +177,7 @@ class _LihatGudangState extends State<LihatGudang> {
                       // Navigate to another page when Gudang C is tapped
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => BarangKeluarScreen()),
+                        MaterialPageRoute(builder: (_) => LaporanRekapanScreen()),
                       );
                     },
                     child: Container(
@@ -213,7 +213,7 @@ class _LihatGudangState extends State<LihatGudang> {
                       // Navigate to another page when Gudang D is tapped
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => BarangKeluarScreen()),
+                        MaterialPageRoute(builder: (_) => LaporanRekapanScreen()),
                       );
                     },
                     child: Container(

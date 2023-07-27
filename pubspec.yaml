@@ -88,6 +88,9 @@ flutter:
     - assets/storage.png
     - assets/warehouse.png
     - assets/box.png
+    - assets/stok.png
+    - assets/bmasuk.png
+    - assets/bkeluar.png
     
 
 
