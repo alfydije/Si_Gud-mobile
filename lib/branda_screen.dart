@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:si_gud/barang_keluar/kategori_bkeluar.dart';
 import 'package:si_gud/barang_masuk/kategori_bmasuk.dart';
 import 'package:si_gud/data_barang/kategori_bdatbar.dart';
+import 'package:si_gud/laporan/lihat_gudang.dart';
 import 'package:si_gud/profil/profil.dart';
 import 'package:si_gud/stok_barang/kategori_stokbar.dart';
 
@@ -105,7 +106,7 @@ class _HomeState extends State<Home> {
                     },
                   ),
                   ListTile(
-                    title: Text("Stock Barang",
+                    title: Text("Stok Barang",
                         style: TextStyle(color: Colors.white)),
                     onTap: () {
                       // Navigate to "Data Barang" screen
@@ -149,40 +150,44 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Inventory',
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Inventory',
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Gudang',
-                            style: TextStyle(
-                              fontSize: 45,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                        ],
+                            Text(
+                              'Gudang',
+                              style: TextStyle(
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                      child: Image.asset(
-                        'assets/home.png',
-                        width: 200,
-                        height: 200,
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Image.asset(
+                          'assets/home.png',
+                          width: 200,
+                          height: 200,
+                        ),
                       ),
                     ),
                   ],
@@ -190,12 +195,11 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 100),
+              padding: EdgeInsets.only(top: 250),
               child: Wrap(
                 spacing: 10,
                 runSpacing: 10,
                 children: [
-                  // Your Wrap children
                   Container(
                     width: 180,
                     height: 180,
@@ -336,17 +340,45 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
-                  // Add more boxes as needed
-                  
                 ],
-                
               ),
-              
-            )
-            
+            ),
+            Positioned(
+              bottom: 20,
+              child: MaterialButton(
+                color: Color.fromARGB(255, 2, 31, 55),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LihatGudang(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 300, // Set the desired width of the button
+                  padding: const EdgeInsets.all(18.0),
+                  child: Text(
+                    "LIHAT GUDANG",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+
+              ),
+            ),
+
           ],
         ),
       ),
     );
   }
 }
+
+
