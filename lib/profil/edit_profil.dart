@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:si_gud/alert/alertsuccess.dart';
 
-// ignore: must_be_immutable
 class EditProfilPopup extends StatefulWidget {
   // Pass the current profile data to the pop-up
   String namaDepan;
@@ -90,8 +90,8 @@ class _EditProfilPopupState extends State<EditProfilPopup> {
             ),
           ),
         ),
-        ElevatedButton(
-          onPressed: () {
+        InkWell(
+          onTap: () {
             // Aksi saat tombol "Simpan" ditekan
             // Simpan data yang telah diubah ke variabel profil
             setState(() {
@@ -102,17 +102,103 @@ class _EditProfilPopupState extends State<EditProfilPopup> {
             });
             // Tutup pop-up setelah data disimpan
             Navigator.pop(context);
+
+            // Navigate to a different page here
+            // For example:
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    Konfirmasi(), // Replace MyOtherPage with the desired page
+              ),
+            );
           },
-          style: ElevatedButton.styleFrom(
-            primary: Color.fromARGB(255, 2, 31, 55), // Warna tombol "Simpan"
-            shape: RoundedRectangleBorder(
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 2, 31, 55), // Warna tombol "Simpan"
               borderRadius: BorderRadius.circular(10),
             ),
+            child: Text(
+              'Simpan',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
-          child: Text(
-            'Simpan',
-            style: TextStyle(
-              color: Colors.white,
+        ),
+      ],
+    );
+  }
+}
+
+class Konfirmasi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Row(
+        children: [
+          SizedBox(
+            width: 10,
+            height: 10,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(35),
+              child: Container(
+                color: Colors.transparent, // Set the background color to transparent
+              ),
+            ),
+          ), // Space between icon and text
+        ],
+      ),
+      content: Text('Apakah yakin untuk mengupdate informasi anda?'),
+      actions: [
+        ElevatedButton(
+          onPressed: () {
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Color(0XFFAF0505), // Warna tombol "Tidak"
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            minimumSize: Size(100, 33), // Set the width and height of the button
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              "Tidak",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(width: 16), // Space between buttons
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SuccessAlertScreen(), // Replace MyOtherPage with the desired page
+              ),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 2, 31, 55), // Warna tombol "Close"
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            minimumSize: Size(100, 33), // Set the width and height of the button
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              "Ya",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
             ),
           ),
         ),

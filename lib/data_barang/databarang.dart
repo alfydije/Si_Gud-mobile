@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:si_gud/data_barang/detailbarang.dart';
 
 class DataBarangScreen extends StatelessWidget {
   @override
@@ -34,26 +35,33 @@ class DataBarangScreen extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailBarangScreen(),
                     ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
+                  );
+                },
+                child: Container(
+                  width: 700,
+                  height: 117,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
                         alignment: Alignment.center,
                         child: Image.asset(
                           "assets/Hardisk.png",
@@ -61,257 +69,276 @@ class DataBarangScreen extends StatelessWidget {
                           width: 80,
                         ),
                       ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "Hardisk",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                      Container(
+                        width: 190,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "Hardisk",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
+                            Text(
+                              "Jumlah Stok",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "05",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
+                            Text(
+                              "05",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.blue,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
-                      ),
-                    ),
-                  ],
-                ),
-                
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          "assets/Hardisk.png",
-                          height: 100,
-                          width: 80,
+                          ],
                         ),
                       ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "Lampu Led",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailBarangScreen(),
                     ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
+                  );
+                },
+                child: Container(
+                  width: 700,
+                  height: 117,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
                         alignment: Alignment.center,
                         child: Image.asset(
-                          "assets/Hardisk.png",
+                          "assets/Led.png",
                           height: 100,
                           width: 80,
                         ),
                       ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "CPU",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                      Container(
+                        width: 190,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "Lampu Led",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
+                            Text(
+                              "Jumlah Stok",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "05",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
+                            Text(
+                              "0",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.blue,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                width: 700,
-                height: 117,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailBarangScreen(),
                     ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
+                  );
+                },
+                child: Container(
+                  width: 700,
+                  height: 117,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
                         alignment: Alignment.center,
                         child: Image.asset(
-                          "assets/Hardisk.png",
+                          "assets/CPU.png",
                           height: 100,
                           width: 80,
                         ),
                       ),
-                    ),
-                    Container(
-                      width: 190,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "VGA Card",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                      Container(
+                        width: 190,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "CPU",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "Jumlah Stok",
-                            style: TextStyle(
-                              fontSize: 14,
+                            Text(
+                              "Jumlah Stok",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
+                            Text(
+                              "05",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.blue,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [],
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailBarangScreen(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 700,
+                  height: 117,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          "assets/VGA.png",
+                          height: 100,
+                          width: 80,
+                        ),
+                      ),
+                      Container(
+                        width: 190,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "VGA",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "Jumlah Stok",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                            Text(
+                              "0",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],

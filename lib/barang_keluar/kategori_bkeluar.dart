@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:si_gud/barang_keluar/barangkeluar.dart';
 
+
 class KategoriBarangKeluarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
