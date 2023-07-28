@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:si_gud/barang_keluar/tambahbarangkeluar.dart';
 import 'package:si_gud/barang_masuk/tambahbarangmasuk.dart';
 
 class BarangKeluarScreen extends StatelessWidget {
@@ -319,7 +320,7 @@ class BarangKeluarScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => TambahBarangScreen(
+              builder: (context) => TambahBarangKlrScreen(
                 fotoBarang: '',
                 kodeBarang: '',
                 stokBarang: '',

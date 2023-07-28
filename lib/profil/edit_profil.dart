@@ -102,9 +102,6 @@ class _EditProfilPopupState extends State<EditProfilPopup> {
             });
             // Tutup pop-up setelah data disimpan
             Navigator.pop(context);
-
-            // Navigate to a different page here
-            // For example:
             Navigator.push(
               context,
               MaterialPageRoute(

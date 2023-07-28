@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:si_gud/barang_keluar/barangkeluar.dart';
 
-class TambahBarangScreen extends StatefulWidget {
+class TambahBarangKlrScreen extends StatefulWidget {
   // Pass the current profile data to the screen
   String namaBarang;
   String stokBarang;
   String kodeBarang;
   String fotoBarang;
-  String pindahkankeGudang;
 
-  TambahBarangScreen({
+  TambahBarangKlrScreen({
     required this.namaBarang,
     required this.stokBarang,
     required this.kodeBarang,
     required this.fotoBarang,
-    required this.pindahkankeGudang,
   });
 
   @override
-  _TambahBarangScreenState createState() => _TambahBarangScreenState();
+  _TambahBarangKlrScreenState createState() => _TambahBarangKlrScreenState();
 }
 
-class _TambahBarangScreenState extends State<TambahBarangScreen> {
+class _TambahBarangKlrScreenState extends State<TambahBarangKlrScreen> {
   // Form controller for editing profile data
   late TextEditingController namaBarangController;
   late TextEditingController stokBarangController;
   late TextEditingController kodeBarangController;
   late TextEditingController fotoBarangController;
-  late TextEditingController pindahkankeGudang;
+  late TextEditingController tanggalMasukController;
+  late TextEditingController jumlahMasukController;
 
   @override
   void initState() {
@@ -36,7 +36,8 @@ class _TambahBarangScreenState extends State<TambahBarangScreen> {
     stokBarangController = TextEditingController(text: widget.stokBarang);
     kodeBarangController = TextEditingController(text: widget.kodeBarang);
     fotoBarangController = TextEditingController(text: widget.fotoBarang);
-   
+    tanggalMasukController = TextEditingController();
+    jumlahMasukController = TextEditingController();
   }
 
   @override
@@ -56,13 +57,13 @@ class _TambahBarangScreenState extends State<TambahBarangScreen> {
     String kodeBarang = kodeBarangController.text;
     String fotoBarang = fotoBarangController.text;
 
+
     // Do whatever you want with the data, e.g., save to database or send to a server
 
     // Close the screen after processing the data
     Navigator.pop(context);
   }
 
-  // ... (kode sebelumnya)
 
   @override
   Widget build(BuildContext context) {
@@ -90,154 +91,297 @@ class _TambahBarangScreenState extends State<TambahBarangScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              'Nama Barang',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
-                color: Colors.grey[300], // Ubah warna kotak menjadi abu-abu
+                color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-                  Text(
-                    'Nama Barang',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextFormField(
-                    controller: namaBarangController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Masukkan nama barang',
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey[300], // Ubah warna kotak menjadi abu-abu
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-                  Text(
-                    'Stok Barang',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextFormField(
-                    controller: stokBarangController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Masukkan stok barang',
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                ],
-              ),
-            ),
-            // Lanjutkan untuk kode-kode Container lainnya dengan gaya yang sama
-            // ...
-            SizedBox(height: 20),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey[300], // Ubah warna kotak menjadi abu-abu
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-                  Text(
-                    'Kode Barang',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextFormField(
-                    controller: stokBarangController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Masukkan kode barang',
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey[300], // Ubah warna kotak menjadi abu-abu
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-                  Text(
-                    'Foto Barang',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextFormField(
-                    controller: stokBarangController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Masukkan foto barang',
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                ],
-              ),
-            ),
-            SizedBox(height: 50),
-            Center(
-              child: ElevatedButton(
-                onPressed: _onTambahButtonPressed,
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 2, 31, 55),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  minimumSize: Size(200,
-                      50), // Ubah ukuran tombol sesuai kebutuhan (panjang x tinggi)
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: const Text(
-                    "Tambah",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
+              child: TextFormField(
+                controller: namaBarangController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Masukkan nama barang',
                 ),
               ),
             ),
+            SizedBox(height: 20),
+            Text(
+              'Stok Barang',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: TextFormField(
+                controller: stokBarangController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Masukkan stok barang',
+                ),
+              ),
+            ),
+            // Continue for other fields...
+            SizedBox(height: 20),
+            Text(
+              'Kode Barang',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: TextFormField(
+                controller: kodeBarangController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Masukkan kode barang',
+                ),
+              ),
+            ),
+            // Continue for other fields...
+            SizedBox(height: 20),
+            Text(
+              'Foto Barang',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: TextFormField(
+                controller: fotoBarangController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Masukkan foto barang',
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+Center(
+  child: ElevatedButton(
+    onPressed: () {
+      // Perform any necessary operations before navigating to the next screen
+      
+      // Example: Getting the values from the text controllers
+      String namaBarang = namaBarangController.text;
+      String stokBarang = stokBarangController.text;
+      String kodeBarang = kodeBarangController.text;
+      String fotoBarang = fotoBarangController.text;
+
+      // Navigate to the next screen and pass data using Navigator.push
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => KonfirmasiTmbhBrg(
+          ),
+        ),
+      );
+    },
+    style: ElevatedButton.styleFrom(
+      primary: Color.fromARGB(255, 2, 31, 55),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(100),
+      ),
+      minimumSize: Size(200, 50),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: const Text(
+        "Tambah",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+        ),
+      ),
+    ),
+  ),
+),
+
           ],
         ),
       ),
+    );
+  }
+}
+
+class KonfirmasiTmbhBrg extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Row(
+        children: [
+          SizedBox(
+            width: 10,
+            height: 10,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(35),
+              child: Container(
+                color: Colors.transparent, 
+              ),
+            ),
+          ), 
+        ],
+      ),
+      content: Text('Apakah yakin untuk menambahkan data barang?'),
+      actions: [
+        ElevatedButton(
+          onPressed: () {
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Color(0XFFAF0505), 
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            minimumSize: Size(100, 33), 
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              "Tidak",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(width: 16), // Space between buttons
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SuccessTmbhBrgKlr(), // Replace MyOtherPage with the desired page
+              ),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 2, 31, 55), // Warna tombol "Close"
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            minimumSize: Size(100, 33), // Set the width and height of the button
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              "Ya",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SuccessTmbhBrgKlr extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Row(
+        children: [
+          SizedBox(
+            width: 40,
+            height: 20,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(35),
+              child: Container(
+                color: Colors.transparent, 
+              ),
+            ),
+          ), 
+        ],
+      ),
+      content: Text('Data barang berhasil di keluarkan'),
+      actions: [
+        // ElevatedButton(
+        //   onPressed: () {
+        //   },
+        //   style: ElevatedButton.styleFrom(
+        //     primary: Color(0XFFAF0505), // Warna tombol "Tidak"
+        //     shape: RoundedRectangleBorder(
+        //       borderRadius: BorderRadius.circular(8),
+        //     ),
+        //     minimumSize: Size(100, 33), // Set the width and height of the button
+        //   ),
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(8.0),
+        //     child: const Text(
+        //       "Tidak",
+        //       style: TextStyle(
+        //         color: Colors.white,
+        //         fontSize: 16,
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        SizedBox(width: 16), // Space between buttons
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BarangKeluarScreen(), // Replace MyOtherPage with the desired page
+              ),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 2, 31, 55), // Warna tombol "Close"
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            minimumSize: Size(100, 33), // Set the width and height of the button
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              "Oke",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
