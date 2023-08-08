@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(), // Menetapkan SplashScreen sebagai halaman awal
+      home: SplashScreen(), 
       routes: {
         '/onboarding': (context) => OnboardingScreen(),
         '/login': (context) => LoginScreen(),

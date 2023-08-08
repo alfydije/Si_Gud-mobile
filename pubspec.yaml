@@ -21,25 +21,23 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
+
 dependencies:
   flutter:
     sdk: flutter
   flutter_native_splash: ^1.2.3
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   clippy_flutter: ^2.0.0-nullsafety.1
   quickalert: ^1.0.1
   awesome_dialog: ^3.1.0
+  pretty_qr_code: ^2.0.3
+  qr_flutter: ^4.1.0
+  render: ^0.1.3+1
+  qr_code_scanner: ^1.0.1
+  url_launcher: ^6.1.12
+  share_files_and_screenshot_widgets_plus: ^1.0.4
+
 
 dev_dependencies:
   flutter_test:
